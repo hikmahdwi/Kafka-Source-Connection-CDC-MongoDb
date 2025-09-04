@@ -1,0 +1,13 @@
+name=SET_NAME_IDENTIFICATION
+# write collection name with this format: database.collection
+collection.include.list=SET_COLLECTION_NAME 
+key.converter=org.apache.kafka.connect.storage.StringConverter
+value.converter=io.confluent.connect.avro.AvroConverter
+mongodb.connection.string=SET_MONGODB_STRING_CONNECTION
+tasks.max=1
+key.converter.schemas.enable=true
+connector.class=io.debezium.connector.mongodb.MongoDbConnector
+value.converter.schemas.enable=true
+topic.prefix=SET_PREFIX
+database.include.list=SET_DATABASE_NAME
+value.converter.schema.registry.url=http://localhost:8081
