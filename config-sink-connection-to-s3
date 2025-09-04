@@ -1,0 +1,19 @@
+topics=SET_TOPIC_NAME
+name=SET_NAME_AS_IDENTIFICATION
+key.converter=org.apache.kafka.connect.storage.StringConverter
+connect.s3.aws.secret.key=SET_S3_SECRET
+connect.s3.path.style.access=true
+transforms.insertFormattedTs.header.name=ts
+transforms.insertFormattedTs.type=io.lenses.connect.smt.header.TimestampConverter
+transforms=insertFormattedTs
+connect.s3.aws.access.key=SET_S3_KEY
+value.converter.schema.registry.url=http://localhost:8081
+value.converter=io.confluent.connect.avro.AvroConverter
+transforms.insertFormattedTs.field=ts_ms
+transforms.insertFormattedTs.format.to.pattern=yyyy-MM-dd
+connect.s3.aws.region=us-east-1
+key.converter.schema.registry.url=http://localhost:8081
+transforms.insertFormattedTs.target.type=string
+connect.s3.custom.endpoint=http://192.168.107.5:9000
+connector.class=io.lenses.streamreactor.connect.aws.s3.sink.S3SinkConnector
+connect.s3.kcql=insert into {SET_YOUR_S3_PATH} select * from {TOPIC_NAME} PARTITIONBY _header.ts STOREAS `PARQUET` PROPERTIES ('flush.size'=100000, 'flush.interval'=5, 'flush.count'=100)
