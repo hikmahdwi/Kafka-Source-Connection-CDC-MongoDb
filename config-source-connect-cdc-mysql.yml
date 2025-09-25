@@ -1,0 +1,14 @@
+name=Ksource-mysql-kupon-campaign
+schema.history.internal.kafka.bootstrap.servers=kafka:9092
+connector.class=io.debezium.connector.mysql.MySqlConnector
+database.user=SET_DATABASE_USER
+database.server.name=mysqlserver1
+database.server.id=11111
+topic.prefix=Kconn-mysql-kupon-campaign
+database.include.list=SET_DATABASE
+database.password=SET_PASSWORD
+schema.history.internal.kafka.topic=Kconn-cdc-kuponku-xxxxx.xxxxxxx.campaign
+database.hostname=SET_DATABASE_CONNECTION
+table.include.list=DATABASE.TABLE, DATABASE.TABLE
+database.port=25060
+include.schema.changes=true
